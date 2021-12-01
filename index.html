@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css" type="text/css">
+    <title>Technical Documentation Page</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav id="navbar">
+            <header>Python Doc.</header>
+            <ul id="nav-list">
+                <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+                <li><a href="#History" class="nav-link">History</a></li>
+                <li><a href="#Design_Filosophy" class="nav-link">Design Filosophy</a></li>
+                <li><a href="#Indentation" class="nav-link">Indentation</a></li>
+                <li><a href="#Control_Flow" class="nav-link">Control Flow</a></li>
+                <li><a href="#Expressions" class="nav-link">Expressions</a></li>
+                <li><a href="#Methods" class="nav-link">Methods</a></li>
+                <li><a href="#Typing" class="nav-link">Typing</a></li>
+                <li><a href="#Arithmetic_Operations" class="nav-link">Arithmetic Operations</a></li>
+                <li><a href="#Libraries" class="nav-link">Libraries</a></li>
+                <li><a href="#Development_Enviroment" class="nav-link">Development Enviroment</a></li>
+                <li><a href="#Reference_Implementation" class="nav-link">Reference Implementation</a></li>
+                <li><a href="#Naming" class="nav-link">Naming</a></li>
+                <li><a href="#Uses" class="nav-link">Uses</a></li>
+                <li><a href="#Reference" class="nav-link">Reference</a></li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction">
+                <header>Introduction</header>
+                <article>
+                    <p>
+                        Python is an interpreted high-level general-purpose programming language.
+                        Its design philosophy emphasizes code readability with its use of significant
+                        indentation. Its language constructs as well as its object-oriented approach
+                        aim to help programmers write clear, logical code for small and large-scale
+                        projects.
+                    </p>
+                    <br>
+                    <p>
+                        Python is dynamically-typed and garbage-collected. It supports multiple
+                        programming paradigms, including structured (particularly, procedural),
+                        object-oriented and functional programming. It is often described as a
+                        "batteries included" language due to its comprehensive standard library.
+                    </p>
+                    <br>
+                    <p>
+                        Guido van Rossum began working on Python in the late 1980s, as a successor
+                        to the ABC programming language, and first released it in 1991 as Python
+                        0.9.0. Python 2.0 was released in 2000 and introduced new features, such as
+                        list comprehensions and a cycle-detecting garbage collection system (in
+                        addition to reference counting). Python 3.0 was released in 2008 and was a
+                        major revision of the language that is not completely backward-compatible.
+                        Python 2 was discontinued with version 2.7.18 in 2020.
+                    </p>
+                    <br>
+                    <p>Python consistently ranks as one of the most popular programming languages.</p>
+                </article>
+            </section>
+            <section class="main-section" id="History">
+                <header>History</header>
+                <article>
+                    <p>
+                        Python was conceived in the late 1980s by Guido van Rossum at Centrum Wiskunde &
+                        Informatica (CWI) in the Netherlands as a successor to the ABC programming language,
+                        which was inspired by SETL, capable of exception handling and interfacing with the
+                        Amoeba operating system. Its implementation began in December 1989. Van Rossum
+                        shouldered sole responsibility for the project, as the lead developer, until 12 July
+                        2018, when he announced his "permanent vacation" from his responsibilities as Python's
+                        "benevolent dictator for life", a title the Python community bestowed upon him to
+                        reflect his long-term commitment as the project's chief decision-maker. In January 2019,
+                        active Python core developers elected a five-member "Steering Council" to lead the project.
+                    </p>
+                    <br>
+                    <p>
+                        Python 2.0 was released on 16 October 2000, with many major new features, including
+                        a cycle-detecting garbage collector (in addition to reference counting) for memory
+                        management and support for Unicode.
+                    </p>
+                    <br>
+                    <p>
+                        Python 3.0 was released on 3 December 2008. It was a major revision of the language
+                        that is not completely backward-compatible. Many of its major features were backported
+                        to Python 2.6.x and 2.7.x version series. Releases of Python 3 include the 2to3 utility,
+                        which automates the translation of Python 2 code to Python 3.
+                    </p>
+                    <br>
+                    <p>
+                        Python 2.7's end-of-life date was initially set at 2015 then postponed to 2020 out of
+                        concern that a large body of existing code could not easily be forward-ported to Python
+                        3. No more security patches or other improvements will be released for it. With Python
+                        2's end-of-life, only Python 3.6.x and later are supported.
+                    </p>
+                    <br>
+                    <p>
+                        Python 3.9.2 and 3.8.8 were expedited as all versions of Python (including 2.7) had security
+                        issues, leading to possible remote code execution and web cache poisoning.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Design_Filosophy">
+                <header>Design Filosophy</header>
+                <article>
+                    <p>
+                        Python is a multi-paradigm programming language. Object-oriented programming and structured
+                        programming are fully supported, and many of its features support functional programming and
+                        aspect-oriented programming (including by metaprogramming and metaobjects (magic methods)).
+                        Many other paradigms are supported via extensions, including design by contract and logic
+                        programming.
+                        <pre>
+                            <code>class Person():</code>  
+                            <code>&emsp;&emsp;def __init__(self):</code>
+                            <code>person1 = Person()</code>
+                        </pre>
+                    </p>
+                    <br>
+                    <p>
+                        Python uses dynamic typing and a combination of reference counting and a cycle-detecting garbage
+                        collector for memory management. It also features dynamic name resolution (late binding), which
+                        binds method and variable names during program execution.
+                        <pre>
+                            <code>## variable a is assigned to a string</code>
+                            <code>a ="hello"</code>
+                            <code>print(type(a))</code>
+                            <br>
+                            <code>## variable a is assigned to an integer</code>
+                            <code>a = 5</code>
+                            <code>print(type(a))</code>
+                        </pre>
+                    </p>
+                    <br>
+                    <p>
+                        Python's design offers some support for functional programming in the Lisp tradition. It has
+                        filter, mapandreduce functions; list comprehensions, dictionaries, sets, and generator
+                        expressions.
+                        The standard library has two modules (itertools and functools) that implement functional tools
+                        borrowed from Haskell and Standard ML.
+                        <pre>
+                            <code>number_list = [ x for x in range(20) if x % 2 == 0]</code>
+                            <code>print(number_list)</code>
+                            <code>## Output = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</code>
+                        </pre>
+                    </p>
+                    <br>
+                    <p>
+                        The language's core philosophy is summarized in the document The Zen of Python (PEP 20), which
+                        includes aphorisms such as:
+                    </p>
+                    <br>
+                    <ul>
+                        <li>Beautiful is better than ugly.</li><br>
+                        <li>Explicit is better than implicit.</li><br>
+                        <li>Simple is better than complex.</li><br>
+                        <li>Complex is better than complicated.</li><br>
+                        <li>Readability counts.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Indentation">
+                <header>Indentation</header>
+                <article>
+                    <p>
+                        Python uses whitespace indentation, rather than curly brackets or keywords, to delimit blocks.
+                        An
+                        increase in indentation comes after certain statements; a decrease in indentation signifies the
+                        end
+                        of the current block. Thus, the program's visual structure accurately represents the program's
+                        semantic
+                        structure. This feature is sometimes termed the off-side rule, which some other languages share,
+                        but
+                        in
+                        most languages indentation does not have any semantic meaning. The recommended indent size is
+                        four
+                        spaces.
+                        <pre>
+                            <code>class Person():</code> 
+                            <code>&emsp;&emsp;def __init__(self, name, age): ## 1 tab</code>
+                            <code>&emsp;&emsp;&emsp;&emsp;self.name = name ## 2 tab</code>
+                            <code>&emsp;&emsp;&emsp;&emsp;if (age &lt; 18): ## 2 tab</code>
+                            <code>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;age = "underage" ## 3 tab</code>
+                            <code>&emsp;&emsp;&emsp;&emsp;else: ## 2 tab</code>
+                            <code>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;age = "overage" ## 3 tab</code>
+                            <code>&emsp;&emsp;def __str__(self): ## 1 tab</code>
+                            <code>&emsp;&emsp;&emsp;&emsp;return self.name + " is a " + age + " person." ## 2 tab</code>
+                        </pre>
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Control_Flow">
+                <header>Control Flow</header>
+                <article>
+                    <p>Python's statements include (among others):</p><br>
+                    <ul>
+                        <li>
+                            The assignment statement, using a single equals sign =.
+                        </li><br>
+                        <li>
+                            The if statement, which conditionally executes a block of code, along with else and elif (a
+                            contraction of else-if).
+                        </li><br>
+                        <li>
+                            The for statement, which iterates over an iterable object, capturing each element to a local
+                            variable for use by the attached block.
+                        </li><br>
+                        <li>
+                            The while statement, which executes a block of code as long as its condition is true.
+                        </li><br>
+                        <li>
+                            The try statement, which allows exceptions raised in its attached code block to be caught
+                            and
+                            handled by except clauses; it also ensures that clean-up code in a finally block will always
+                            be
+                            run
+                            regardless of how the block exits.
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Expressions">
+                <header>Expressions</header>
+                <article>
+                    <p>Some Python expressions are similar to those found in languages such as C and Java, while some
+                        are
+                        not:</p><br>
+                    <ul>
+                        <li>
+                            Addition, subtraction, and multiplication are the same, but the behavior of division
+                            differs.
+                            There are two types of divisions in Python. They are floor division (or integer division) //
+                            and floating-point/division. Python also uses the ** operator for exponentiation.
+                        </li><br>
+                        <li>
+                            From Python 3.5, the new @ infix operator was introduced. It is intended to be used by
+                            libraries
+                            such as NumPy for matrix multiplication.
+                        </li><br>
+                        <li>
+                            From Python 3.8, the syntax :=, called the 'walrus operator' was introduced. It assigns
+                            values
+                            to
+                            variables as part of a larger expression.
+                        </li><br>
+                        <li>
+                            In Python, == compares by value, versus Java, which compares numerics by value[90] and
+                            objects
+                            by reference.
+                            (Value comparisons in Java on objects can be performed with the equals() method.) Python's
+                            is
+                            operator may be
+                            used to compare object identities (comparison by reference). In Python, comparisons may be
+                            chained.
+                        </li><br>
+                        <li>
+                            Python uses the words and, or, not for its boolean operators rather than the symbolic &&,
+                            ||, !
+                            used in Java and C.
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Methods">
+                <header>Methods</header>
+                <article>
+                    <p>
+                        Methods on objects are functions attached to the object's class; the syntax
+                        instance.method(argument) is, for normal
+                        methods and functions, syntactic sugar for Class.method(instance, argument). Python methods have
+                        an
+                        explicit self
+                        parameter to access instance data, in contrast to the implicit self (or this) in some other
+                        object-oriented programming
+                        languages (e.g., C++, Java, Objective-C, or Ruby).[96] Apart from this, Python also provides
+                        methods, often called dunder
+                        methods (due to their names beginning and ending with double-underscores), to allow user-defined
+                        classes to modify how
+                        they are handled by native operations such as length, comparison, in arithmetic operations, type
+                        conversion, and many
+                        more.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Typing">
+                <header>Typing</header>
+                <article>
+                    <p> Python uses duck typing and has typed objects but untyped variable names. Type constraints are
+                        not
+                        checked at compile time; rather, operations on an object may fail, signifying that the given
+                        object
+                        is not of a suitable type. Despite being dynamically-typed, Python is strongly-typed, forbidding
+                        operations that are not well-defined (for example, adding a number to a string) rather than
+                        silently
+                        attempting to make sense of them.
+                    </p><br>
+                    <p>
+                        Python allows programmers to define their own types using classes, which are most often used for
+                        object-oriented programming. New instances of classes are constructed by calling the class (for
+                        example, SpamClass() or EggsClass()), and the classes are instances of the metaclass type
+                        (itself an
+                        instance of itself), allowing metaprogramming and reflection.
+                    </p><br>
+                    <p>
+                        Before version 3.0, Python had two kinds of classes: old-style and new-style. The syntax of both
+                        styles is the same, the difference being whether the class object is inherited from, directly or
+                        indirectly (all new-style classes inherit from object and are instances of type). In versions of
+                        Python 2 from Python 2.2 onwards, both kinds of classes can be used. Old-style classes were
+                        eliminated in Python 3.0.
+                    </p><br>
+                    <p>
+                        The long-term plan is to support gradual typing and from Python 3.5, the syntax of the language
+                        allows specifying static types but they are not checked in the default implementation, CPython.
+                        An
+                        experimental optional static type checker named mypy supports compile-time type checking.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Arithmetic_Operations">
+                <header>Arithmetic Operations</header>
+                <article>
+                    <p>
+                        Python has the usual symbols for arithmetic operators (+, -, *, /), the floor division operator
+                        //
+                        and the modulo operation % (where the remainder can be negative, e.g. 4 % -3 == -2). It also has
+                        **
+                        for exponentiation, e.g. 5**3 == 125 and 9**0.5 == 3.0, and a matrix‑multiplication operator @
+                        .[104] These operators work like in traditional math; with the same precedence rules, the
+                        operators
+                        infix (+ and - can also be unary to represent positive and negative numbers respectively).
+                        <br>
+                        The division between integers produces floating-point results. The behavior of division has
+                        changed
+                        significantly over time:
+                    </p>
+                    <ul>
+                        <li>Current Python (i.e. since 3.0) changed / to always be floating-point division, e.g. 5/2 ==
+                            2.5.
+                        </li><br>
+                        <li>Python 2.2 changed integer division to round towards negative infinity, e.g. 7/3 == 2 and
+                            -7/3
+                            == -3. The floor division // operator was introduced. So 7//3 == 2, -7//3 == -3, 7.5//3 ==
+                            2.0
+                            and -7.5//3 == -3.0. Adding from __future__ import division causes a module to use Python
+                            3.0
+                            rules for division (see next).</li><br>
+                        <li>Python 2.1 and earlier used C's division behavior. The / operator is integer division if
+                            both
+                            operands are integers, and floating-point division otherwise. Integer division rounds
+                            towards 0,
+                            e.g. 7/3 == 2 and -7/3 == -2.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Libraries">
+                <header>Libraries</header>
+                <article>
+                    <p>Python's large standard library, commonly cited as one of its greatest strengths, provides tools
+                        suited to many tasks. For Internet-facing applications, many standard formats and protocols such
+                        as
+                        MIME and HTTP are supported. It includes modules for creating graphical user interfaces,
+                        connecting
+                        to relational databases, generating pseudorandom numbers, arithmetic with arbitrary-precision
+                        decimals, manipulating regular expressions, and unit testing.
+                        <br>
+                        Some parts of the standard library are covered by specifications (for example, the Web Server
+                        Gateway Interface (WSGI) implementation wsgiref follows PEP 333), but most modules are not.
+                        They are specified by their code, internal documentation, and test suites. However, because most
+                        of
+                        the standard library is cross-platform Python code, only a few modules need altering or
+                        rewriting
+                        for variant implementations.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Development_Enviroment">
+                <header>Development Enviroment</header>
+                <article>
+                    <p>Most Python implementations (including CPython) include a read–eval–print loop (REPL), permitting
+                        them to function as a command line interpreter for which the user enters statements sequentially
+                        and
+                        receives results immediately.
+                        <br>
+                        Python comes with a Integrated development environment (IDE) called IDLE, which is more beginner
+                        based.
+                        <br>
+                        Other shells, including IDLE and IPython, add further abilities such as improved
+                        auto-completion,
+                        session state retention and syntax highlighting.
+                        <br>
+                        As well as standard desktop integrated development environments, there are Web browser-based
+                        IDEs;
+                        SageMath (intended for developing science and math-related Python programs); PythonAnywhere, a
+                        browser-based IDE and hosting environment; and Canopy IDE, a commercial Python IDE emphasizing
+                        scientific computing.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Reference_Implementation">
+                <header>Reference Implementation</header>
+                <article>
+                    <p>
+                        CPython is the reference implementation of Python. It is written in C, meeting the C89 standard
+                        with
+                        several select C99 features (with later C versions out, it's considered outdated; CPython
+                        includes its own C extensions, but third-party extensions are not limited to older C versions,
+                        can
+                        e.g. be implemented with C11 or C++). It compiles Python programs into an intermediate
+                        bytecode which is then executed by its virtual machine. CPython is distributed with a
+                        large standard library written in a mixture of C and native Python. It is available for many
+                        platforms, including Windows (starting with Python 3.9, the Python installer deliberately fails
+                        to
+                        install on Windows 7 and 8; Windows XP was supported until Python 3.5) and most modern
+                        Unix-like systems, including macOS (and Apple M1 Macs, since Python 3.9.1, with experimental
+                        installer) and unofficial support for e.g. VMS. Platform portability was one of its earliest
+                        priorities, during the Python 1 and Python 2 time-frame, even OS/2 and Solaris were
+                        supported; support has since been dropped for a lot of platforms.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Naming">
+                <header>Naming</header>
+                <article>
+                    <p>
+                        Python's name is derived from the British comedy group Monty Python, whom Python creator Guido
+                        van
+                        Rossum enjoyed while developing the language. Monty Python references appear frequently in
+                        Python
+                        code and culture; for example, the metasyntactic variables often used in Python literature are
+                        spam and eggs instead of the traditional foo and bar. The official Python documentation
+                        also contains various references to Monty Python routines.
+                        <br>
+                        The prefix Py- is used to show that something is related to Python. Examples of the use of this
+                        prefix in names of Python applications or libraries include Pygame, a binding of SDL to Python
+                        (commonly used to create games); PyQt and PyGTK, which bind Qt and GTK to Python respectively;
+                        and
+                        PyPy, a Python implementation originally written in Python.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Uses">
+                <header>Uses</header>
+                <article>
+                    <p>Python can serve as a scripting language for web applications, e.g., via mod_wsgi for the Apache
+                        web
+                        server. With Web Server Gateway Interface, a standard API has evolved to facilitate these
+                        applications. Web frameworks like Django, Pylons, Pyramid, TurboGears, web2py, Tornado, Flask,
+                        Bottle and Zope support developers in the design and maintenance of complex applications. Pyjs
+                        and
+                        IronPython can be used to develop the client-side of Ajax-based applications. SQLAlchemy can be
+                        used
+                        as a data mapper to a relational database. Twisted is a framework to program communications
+                        between
+                        computers, and is used (for example) by Dropbox.
+                        <br>
+                        Libraries such as NumPy, SciPy and Matplotlib allow the effective use of Python in scientific
+                        computing, with specialized libraries such as Biopython and Astropy providing
+                        domain-specific functionality. SageMath is a computer algebra system with a notebook interface
+                        programmable in Python: its library covers many aspects of mathematics, including algebra,
+                        combinatorics, numerical mathematics, number theory, and calculus. OpenCV has Python bindings
+                        with a rich set of features for computer vision and image processing.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <article>
+                    <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Wikipedia: Python</a></p>
+                </article>
+            </section>
+
+        </main>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
